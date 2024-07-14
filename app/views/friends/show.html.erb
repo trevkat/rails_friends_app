@@ -2,17 +2,21 @@
   <h1 class="display-4">
     <%= @friend.first_name %>
     <%= @friend.last_name %>
-    </h1>
-   <p class="lead">
+  </h1>
+  <p class="lead">
     <%= @friend.email %>  | 
     <%= @friend.phone %>  |  
     <%= @friend.twitter %>
+
   </p>
   <br/>
-<%= link_to "Edit this friend", edit_friend_path(@friend), class:"btn btn-secondary" %>
 
-<%= button_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-
-<%= link_to "Back to friends", friends_path, class:"btn btn-dark" %>
+<div class="btn-group" role="group">
+  <%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-secondary" %>
+  &nbsp;
+  <%= button_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  &nbsp;
+  <%= link_to 'Back', friends_path, class:"btn btn-dark" %>
 </div>
 
+</div>
